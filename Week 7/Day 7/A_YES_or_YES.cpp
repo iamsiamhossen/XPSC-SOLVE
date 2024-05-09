@@ -1,0 +1,85 @@
+/**
+ * Author: iamsiamhossen
+ * Created: 09-05-2024 21:44:49
+ **/
+#include <bits/stdc++.h>
+#define fastread() (ios_base::sync_with_stdio(0), cin.tie(0))
+#define endl "\n"
+// HighLoad
+#define ll long long int
+#define pb push_back
+#define ld long double
+#define pi pair<ll, ll>
+#define map map<int, int>
+#define setd set<int, greater<int>>
+#define seta set<int>
+// next three are handy ways to get ints, it's also force you to use '&' sign
+#define GET1(a) scanf("%d", &a)
+#define GET2(a, b) scanf("%d%d", &a, &b)
+#define GET3(a, b, c) scanf("%d%d%d", &a, &b, &c)
+#define GETS(x) scanf("%s", x) // get a char* string
+#define INIT1(n) \
+    LL(n);       \
+    scanf("%lld", &(n))
+#define INIT2(n, m) \
+    LL(n), (m);     \
+    scanf("%lld%lld", &(n), &(m))
+#define INIT3(n, m, k) \
+    LL(n), (m), (k);   \
+    scanf("%lld%lld%lld", &(n), &(m), &(k))
+#define YES cout << "YES\n"
+#define NO cout << "NO\n"
+#define Yes cout << "Yes\n"
+#define No cout << "No\n"
+#define Ok cout << "Ok\n"
+// Vector
+#define vec vector<ll>;
+#define vvi vector<vi>;
+// Vector Pair
+#define vectorpair vector<ii>;
+#define vvii vector<vii>;
+// MOD
+#define EPS 1e-9
+#define PI 3.1415926535897932384626433832795
+#define MOD 1000000007
+#define INF 1001001001
+// for map, pair
+#define mp make_pair
+#define fi first
+#define se second
+#define forn(i, n) for (int i = 0; i < int(n); i++)
+// directions
+const int fx[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+const int fxx[8][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+#define checkmate return 0;
+using namespace std;
+
+void solve()
+{
+    string s;
+    cin >> s;
+    bool flag = false;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if ((s[i] == 'Y' or s[i] == 'y') and (s[i + 1] == 'E' or s[i + 1] == 'e') and (s[i + 2] == 'S' or s[i + 2] == 's'))
+        {
+            flag = true;
+        }
+    }
+    if (flag)
+        YES;
+    else
+        NO;
+}
+int main()
+{
+    fastread();
+    int tc = 1;
+    cin >> tc;
+    for (int t = 1; t <= tc; t++)
+    {
+        // cout << "Case " << t << ": ";
+        solve();
+    }
+    checkmate;
+}

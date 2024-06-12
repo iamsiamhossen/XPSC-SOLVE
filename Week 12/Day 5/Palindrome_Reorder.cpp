@@ -63,21 +63,36 @@ using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node
 void solve()
 {
 
-    string s;
+    string s, res;
     cin >> s;
+    int odd = 0, left = 0, right = s.size() - 1;
+    res.append(s.size(), ' ');
     map m;
     for (auto u : s)
     {
         m[u]++;
     }
-    vector<string> b;
-    vector<pair<char, int>> c(m.begin(), m.end());
-    sort(c.begin(), c.end(), [](const pair<char, int> &a, const pair<char, int> &b)
-         { return a.second > b.second; });
-    for (auto [x, y] : c)
+    for (auto [x, y] : m)
     {
-        cout << x << " " << y << endl;
+        if (y % 2 != 0)
+        {
+            odd++;
+            if (odd > 1)
+                break;
+            res[s.size() / 2] = x;
+            y--;
+        }
+        while (y)
+        {
+            res[left++] = x;
+            res[right--] = x;
+            y -= 2;
+        }
     }
+    if (odd > 1)
+        cout << "NO SOLUTION" << endl;
+    else
+        cout << res << endl;
 }
 int main()
 {
